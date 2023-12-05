@@ -4,13 +4,13 @@ const bodyParser = require("body-parser");
 const cors = require("cors"); // Import the cors middleware
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 
 app.use(cors({ 
   origin: "*",
   methods: ["GET", "POST", "OPTIONS", "PUT"]
 }));
-console.log(port);
+
 // Enable CORS for all routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
