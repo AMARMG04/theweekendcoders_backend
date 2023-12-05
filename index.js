@@ -10,6 +10,7 @@ app.use(cors({
   origin: "*",
   methods: ["GET", "POST", "OPTIONS", "PUT"]
 }));
+console.log(port);
 // Enable CORS for all routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
