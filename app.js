@@ -7,7 +7,14 @@ const cors = require("cors"); // Import the cors middleware
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({ origin: '*' }));
+const corsOptions = {
+  origin: process.env.NODE_ENV === "development" ? "*" : "https://theweekendcoders.vercel.app/",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // enable set cookie
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
  // Enable CORS for all routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
