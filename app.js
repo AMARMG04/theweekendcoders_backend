@@ -112,12 +112,12 @@ app.post("/submit-form", (req, res) => {
     attachments: [
       {
         filename: 'logo.jpg',
-        path: '../public/assets/logo.jpg',
+        path: './logo.jpg',
         cid: 'companyLogo',
       },
       {
         filename: "email-image.jpg",
-        path: "../public/assets/email-image.jpg",
+        path: "./email-image.jpg",
         cid: "poster",
       },
     ],
