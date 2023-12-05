@@ -10,7 +10,7 @@ const port = process.env.PORT || 3001;
 const corsOptions = {
   // origin: process.env.NODE_ENV === "production" ? "https://theweekendcoders.vercel.app/" : "*",
   origin: "https://theweekendcoders.vercel.app/",
-  methods: ["GET", "PUT", "POST"],
+  methods: ["GET", "PUT", "POST", "OPTIONS"],
   credentials: true, // enable set cookie
   optionsSuccessStatus: 204,
 };
