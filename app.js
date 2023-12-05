@@ -3,12 +3,11 @@ const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const cors = require("cors"); // Import the cors middleware
 
-
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({ origin: '*' }));
- // Enable CORS for all routes
+app.use(cors({ origin: "https://theweekendcoders.vercel.app" }));
+// Enable CORS for all routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -43,7 +42,7 @@ const createAdminEmail = (formData) => {
     `;
 };
 
-const emailTemplate =  `
+const emailTemplate = `
     <html lang="en">
     <head>
       <style>
@@ -113,9 +112,9 @@ app.post("/submit-form", (req, res) => {
     html: emailTemplate,
     attachments: [
       {
-        filename: 'logo.jpg',
-        path: './logo.jpg',
-        cid: 'companyLogo',
+        filename: "logo.jpg",
+        path: "./logo.jpg",
+        cid: "companyLogo",
       },
       {
         filename: "email-image.jpg",
