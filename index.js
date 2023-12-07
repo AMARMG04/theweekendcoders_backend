@@ -109,6 +109,8 @@ const emailTemplate = `
   </html>
   
   `;
+
+app.options('*', function (req,res) { res.sendStatus(200); });
 // Define route for form submission
 app.post("/submit-form", (req, res) => {
   // res.setHeader("Access-Control-Allow-Origin", "*");
