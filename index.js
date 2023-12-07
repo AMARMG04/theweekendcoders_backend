@@ -111,6 +111,12 @@ const emailTemplate = `
   
   `;
 
+app._router.stack.forEach((middleware) => {
+    if (middleware.route) {
+        console.log("Registered route:", middleware.route.path);
+    }
+});
+
 app.options('*', function (req,res) { res.sendStatus(200); });
 // Define route for form submission
 app.post("/submit-form", (req, res) => {
