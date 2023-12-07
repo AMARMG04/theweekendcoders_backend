@@ -118,10 +118,11 @@ app.post("/submit-form", (req, res) => {
   // res.setHeader("Access-Control-Allow-Methods", "POST");
   // res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // Check if it's a preflight request
-  if (req.method === "OPTIONS") {
-    res.send("ok"); // Respond OK for preflight requests
-  }
+  // // Check if it's a preflight request
+  // if (req.method === "OPTIONS") {
+  //   res.status(200); // Respond OK for preflight requests
+  //   return;
+  // }
 
 
   const formData = req.body;
