@@ -120,7 +120,7 @@ app.post("/submit-form", (req, res) => {
 
   // Check if it's a preflight request
   if (req.method === "OPTIONS") {
-    res.send(""); // Respond OK for preflight requests
+    res.send("ok"); // Respond OK for preflight requests
   }
 
 
