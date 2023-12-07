@@ -11,6 +11,7 @@ app.use(cors({
   methods: ["GET", "POST", "OPTIONS", "PUT"],
   optionsSuccessStatus: 200,
   credentials: true,
+  preflightContinue: true,
 }));
 
 // app.use(cors());
@@ -117,10 +118,10 @@ app.post("/submit-form", (req, res) => {
   // res.setHeader("Access-Control-Allow-Methods", "POST");
   // res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // // Check if it's a preflight request
-  // if (req.method === "OPTIONS") {
-  //   res.status(200).end('ok'); // Respond OK for preflight requests
-  // }
+  // Check if it's a preflight request
+  if (req.method === "OPTIONS") {
+    res.send(""); // Respond OK for preflight requests
+  }
 
 
   const formData = req.body;
