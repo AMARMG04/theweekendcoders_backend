@@ -21,6 +21,10 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/home', (req, res) => {
+  res.status(200).json('Welcome, your app is working well');
+})
+
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
